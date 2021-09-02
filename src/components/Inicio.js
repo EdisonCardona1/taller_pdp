@@ -1,8 +1,6 @@
-const Inicio = () => {
-    function sayHello() {
-        alert('You clicked me!');
-      }
 
+const Inicio = () => {
+     
     return (
         <div>
             <h1><center>Juego Open Trivia</center></h1>
@@ -34,7 +32,7 @@ const Inicio = () => {
                 </select>
             </div>
             <br></br>
-            <button onClick={sayHello}>Default</button>
+            
             </center>
         </div>
     );
