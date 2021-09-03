@@ -5,6 +5,7 @@ import AppRouter from "./routers/AppRouter";
 const initialState = {
   name: "Default name",
   level: "Default level",
+  category: "Default category",
   money: 0,
 };
 

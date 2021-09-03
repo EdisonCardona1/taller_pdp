@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import GameContext from "../context/GameContext"
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-    const {User} = useContext(GameContext);
+    const {User,logout} = useContext(GameContext);
     
     return (
         <div>
@@ -10,6 +11,7 @@ const Navbar = () => {
             <h3>User: {User.name}</h3>
             <h3>level: {User.level}</h3>
             <h3>Money: {User.money}</h3>
+            <NavLink exact to="/" onClick={logout}>Cerrar</NavLink>
         </div>
     )
 }
