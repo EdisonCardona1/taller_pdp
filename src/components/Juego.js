@@ -1,13 +1,13 @@
-import { useContext } from "react";
-import GameContext from "../context/GameContext";
+
 
 const Juego = () => {
-    const data = useContext(GameContext);
+    
     
     return (
         <div>
-            <h3>Juego</h3>
-            <h3>Usuario: {data}</h3>
+            <h3>----------------</h3>
+            <h1>Juego</h1>
+            <h3>----------------</h3>
         </div>
     );
 }

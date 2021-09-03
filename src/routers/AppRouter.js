@@ -1,15 +1,24 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import BotonIngresar from "../components/BotonIngresar";
+import Inicio from "../components/Inicio";
 import Juego from "../components/Juego";
+import Navbar from "../components/Navbar";
+import NotFound from "../components/NotFound";
 
 const AppRouter = () => {
     return (
-    <Router>       
-        <NavLink exact to="/juego" activeClassName="active">
-            Ingresar
-        </NavLink>
-        
-        <Route exact path="/juego" component={Juego} />
+    <Router>
+        <Switch>
+            <Route exact path="/juego"> 
+                <Navbar/>
+                <Juego/>
+            </Route> 
+            <Route exact path="/"> 
+                <Inicio/>
+                <BotonIngresar/>
+            </Route> 
+            <Route exact path="*" component={NotFound} />
+        </Switch>                    
     </Router>
     )
 }
