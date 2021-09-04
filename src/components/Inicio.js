@@ -12,16 +12,13 @@ const Inicio = () => {
             name: document.getElementById("inputName").value,
             level: varLevel,
             category: VarCategory,
-            money: 0
+            money: 0,
+            apiURL: `https://opentdb.com/api.php?amount=10&category=${VarCategory}&difficulty=${varLevel}&type=multiple`
           };
         login(secondState);
-        construirURLAPI(VarCategory, varLevel);
+        
       };
 
-    const construirURLAPI = (category,level) => {
-        let urlAPI = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${level}&type=multiple`
-        console.log(urlAPI);
-    };
     return (
         <div>
         <h1><center>Juego Open Trivia</center></h1>
