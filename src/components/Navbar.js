@@ -11,7 +11,7 @@ const Navbar = () => {
             <h3>User: {User.name}</h3>
             <h3>level: {User.level}</h3>
             <h3>Money: {User.money}</h3>
-            <NavLink exact to="/" onClick={logout}>Cerrar</NavLink>
+            <NavLink exact to="/" onClick={logout}>Salir</NavLink>
         </div>
     )
 }
