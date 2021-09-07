@@ -22,6 +22,7 @@ const initialQuestions = {
 
 var indice_respuesta_correcta=99;
 var bandera=false;
+let temporizador1;
 
 const Juego = () => {
     const {User} = useContext(GameContext);
@@ -41,6 +42,15 @@ const Juego = () => {
      }, [updateQuestions]);
 
     function iniciar () {
+        let n = 29;
+        temporizador1 = setInterval(() => {
+            document.getElementById("Temporizador1").innerHTML = n
+            if(n===0){
+            clearTimeout(temporizador1);
+            }
+            n--
+        }, 1000);
+
         bandera=false;
         var preguntas = [10];
         var respuestasIncorrectas = [10];
@@ -82,6 +92,8 @@ const Juego = () => {
         
         document.getElementById("Preguntas").innerHTML = preguntas[indiceAleatorio]
         document.getElementById("Respuestas").innerHTML = txt_respuestas
+        document.getElementById("Temporizador1").innerHTML = 30
+        document.getElementById("Temporizador2").innerHTML = 5
     };
 
     function comprobar(){
@@ -94,8 +106,18 @@ const Juego = () => {
                 }
             }
             if (selectedValue === indice_respuesta_correcta){
-                alert("Correcto" )
-                iniciar();
+                clearTimeout(temporizador1);
+                console.log("esperando 5 seg");
+                let n = 4;
+                let temporizador2 = setInterval(() => {
+                    document.getElementById("Temporizador2").innerHTML = n
+                    if(n===0){
+                        clearTimeout(temporizador2);
+                        iniciar();
+                    }
+                    n--
+                }, 1000);
+                
             }else{
                 alert("Incorrecto")
             }
@@ -109,6 +131,8 @@ const Juego = () => {
             <h1>Juego</h1>
             <h3>----------------</h3>
             <button onClick={iniciar}>Iniciar</button>
+            <div id="Temporizador1"></div>
+            <div id="Temporizador2"></div>
             <h2>Preguntas:</h2>
             <div id="Preguntas"></div>
             <div id="Respuestas"></div>
