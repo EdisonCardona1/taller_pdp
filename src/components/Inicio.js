@@ -16,21 +16,17 @@ const Inicio = () => {
             apiURL: `https://opentdb.com/api.php?amount=10&category=${VarCategory}&difficulty=${varLevel}&type=multiple`
           };
         login(secondState);
-        
       };
 
     return (
         <div>
         <h1><center>Juego Open Trivia</center></h1>
-            
             <div className="form-group">
                 <label htmlFor="inputName">Usuario:</label>
                 <input
-                   
                     type="text"
                     className="form-control"
-                    id="inputName"
-                />
+                    id="inputName"/>
             </div>
             <br></br>
             <div>
