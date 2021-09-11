@@ -22,10 +22,10 @@ const initialQuestions = {
 
 var indice_respuesta_correcta=99;
 var bandera=false;
-let temporizador1;
+var temporizador1;
 
 const Juego = () => {
-    const {User} = useContext(GameContext);
+    const {User, login} = useContext(GameContext);
     const [Questions, setQuestions] = useState(initialQuestions);
 
     const updateQuestions = useCallback(
@@ -106,6 +106,16 @@ const Juego = () => {
                 }
             }
             if (selectedValue === indice_respuesta_correcta){
+
+                const secondState = {
+                    name: User.name,
+                    level: User.level,
+                    category: User.category,
+                    money: User.money + 1000,
+                    apiURL: User.apiURL
+                  };
+
+                login(secondState);
                 clearTimeout(temporizador1);
                 console.log("esperando 5 seg");
                 let n = 4;
@@ -124,7 +134,6 @@ const Juego = () => {
     }
 
 
-
     return (
         <div>
             <h3>----------------</h3>
@@ -137,7 +146,6 @@ const Juego = () => {
             <div id="Preguntas"></div>
             <div id="Respuestas"></div>
             <button onClick={comprobar}>Comprobar respuesta</button>                        
-            
         </div>
     );
 }

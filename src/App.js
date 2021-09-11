@@ -1,5 +1,6 @@
 import { GameProvider } from "./context/GameContext";
 import AppRouter from "./routers/AppRouter";
+import './styles/inicio.css'
 
 function App() {
   return (
