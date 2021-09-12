@@ -106,7 +106,7 @@ const Juego = () => {
                 }
             }
             if (selectedValue === indice_respuesta_correcta){
-
+                alert("Correcto... cargando siguiente pregunta");
                 const secondState = {
                     name: User.name,
                     level: User.level,
@@ -136,9 +136,6 @@ const Juego = () => {
 
     return (
         <div>
-            <h3>----------------</h3>
-            <h1>Juego</h1>
-            <h3>----------------</h3>
             <button onClick={iniciar}>Iniciar</button>
             <div id="Temporizador1"></div>
             <div id="Temporizador2"></div>
