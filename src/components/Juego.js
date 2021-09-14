@@ -5,6 +5,7 @@ import BarraLateral from "./BarraLateral";
 import { NavLink } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import Navbar from "./Navbar";
 
 const initialQuestions = {
     response_code: 0,
@@ -55,6 +56,7 @@ const Juego = () => {
             document.getElementById("Temporizador1").innerHTML = n
             if(n===0){
             clearTimeout(temporizador1);
+            document.getElementById("Responder").style.display = "none";
             }
             n--
         }, 1000);
@@ -138,6 +140,7 @@ const Juego = () => {
                         clearTimeout(temporizador2);
                         if(User?.preguntaNro === 2){
                             alert("Felicidades Ganaste");
+                            document.getElementById("Responder").style.display = "none";
                         }else{
                             iniciar();
                             login(secondState);
@@ -148,11 +151,14 @@ const Juego = () => {
                 
             }else{
                 alert("Incorrecto")
+                document.getElementById("Responder").style.display = "none";
+                clearTimeout(temporizador1);
             }
     }
 
     return (
         <>
+        <Navbar/>
         <IconContext.Provider value = {{style: {fontSize: "1.8em"}}}>
             <NavLink exact to="/" onClick={logout} style={{color: 'red', textDecoration: 'none'}} 
                     activeStyle={{color: 'red', textDecoration: 'none'}}><FaPowerOff></FaPowerOff>
