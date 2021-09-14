@@ -7,8 +7,6 @@ html {
     
     .sidebarwrap {
     background-color: #23394d;
-    border-left: 1px solid #CCCCCC;
-    box-shadow: inset 1px 0 1px -1px #CCCCCC;
     display: block;
     height: 85%;
     position: fixed;

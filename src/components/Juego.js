@@ -2,6 +2,9 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext"
 import getQuestions from "../helpers/getQuestions";
 import BarraLateral from "./BarraLateral";
+import { NavLink } from "react-router-dom";
+import { FaPowerOff } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 const initialQuestions = {
     response_code: 0,
@@ -26,7 +29,7 @@ var bandera=false;
 var temporizador1;
 
 const Juego = () => {
-    const {User, login} = useContext(GameContext);
+    const {User, login,logout} = useContext(GameContext);
     const [Questions, setQuestions] = useState(initialQuestions);
 
     const updateQuestions = useCallback(
@@ -150,6 +153,11 @@ const Juego = () => {
 
     return (
         <>
+        <IconContext.Provider value = {{style: {fontSize: "1.8em"}}}>
+            <NavLink exact to="/" onClick={logout} style={{color: 'red', textDecoration: 'none'}} 
+                    activeStyle={{color: 'red', textDecoration: 'none'}}><FaPowerOff></FaPowerOff>
+            </NavLink>
+        </IconContext.Provider>
         <div className="container">
             <div className="center">
                 <center>

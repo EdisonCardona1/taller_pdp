@@ -30,9 +30,6 @@ export const Menu = styled.ul`
 export const MenuItem = styled.li`
     float: left;
 `;
-export const MenuItemRight = styled.li`
-    float: right;
-`;
 export const MenuItemLink= styled.h4`
     display: block;
     color: white;
