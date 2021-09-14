@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext"
 import getQuestions from "../helpers/getQuestions";
+import BarraLateral from "./BarraLateral";
 
 const initialQuestions = {
     response_code: 0,
@@ -143,6 +144,7 @@ const Juego = () => {
     }
 
     return (
+        <>
         <div className="container">
             <div className="center">
                 <center>
@@ -160,6 +162,8 @@ const Juego = () => {
                 </center>
             </div>
         </div>
+        <BarraLateral></BarraLateral>
+        </>
     );
 }
 export default Juego;

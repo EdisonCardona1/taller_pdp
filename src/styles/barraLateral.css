@@ -1,0 +1,41 @@
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .sidebarwrap {
+    background-color: #23394d;
+    border-left: 1px solid #CCCCCC;
+    box-shadow: inset 1px 0 1px -1px #CCCCCC;
+    display: block;
+    height: 85%;
+    position: fixed;
+    right: 0.9%;
+    top: 12.5%;
+    width: 255px;
+    z-index: 300;
+    padding-top: 57px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    }
+    .col {
+    float: left;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    padding-top: 57px !important;
+    min-height: 18px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 5px;
+    overflow-y: scroll;
+    width:100%;
+    color: white;
+    font-size: 24px;
+    }
+    

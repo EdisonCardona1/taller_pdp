@@ -3,6 +3,7 @@ import AppRouter from "./routers/AppRouter";
 import './styles/inicio.css'
 import './styles/navBar.css'
 import './styles/juego.css'
+import './styles/barraLateral.css'
 
 function App() {
   return (
