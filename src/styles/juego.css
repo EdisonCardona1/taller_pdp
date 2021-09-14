@@ -1,5 +1,5 @@
 .container {
-    height: 500px;
+    height: 600px;
     position: relative;
     border: 1px solid #23394d;
     background: rgb(240, 240, 240);
@@ -45,6 +45,16 @@
     color: white;
     text-decoration: none;
     font-size: 72px;
+    font-family: sans-serif;
+}
+
+.preguntas{
+    font-size: 44px;
+    font-family: sans-serif;
+}
+
+.respuestas{
+    font-size: 24px;
     font-family: sans-serif;
 }
 

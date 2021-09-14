@@ -43,6 +43,8 @@ const Juego = () => {
 
     const iniciar = () => {
         document.getElementById("iniciar").style.visibility = "hidden";
+        document.getElementById("Temporizador1").style.display = "inline";
+        document.getElementById("Responder").style.display = "inline";
 
         let n = 29;
         temporizador1 = setInterval(() => {
@@ -88,8 +90,12 @@ const Juego = () => {
             posiciones.splice(posicion_aleatoria, 1);
         }
         
-        for (let i in respuestas_reordenadas){
-            txt_respuestas += '<input type="radio" id=' + i + '" name="rdGroupResp" value ='+ i + '><label>'+ respuestas_reordenadas[i]+'</label>'
+        let k=0
+        for (k in respuestas_reordenadas){
+            txt_respuestas += '<input type="radio" id=' + k + '" name="rdGroupResp" value ='+ k + '><label>'+ respuestas_reordenadas[k]+'</label>'
+            if(k===1){
+                txt_respuestas += '<br>'
+            }
         }
         
         document.getElementById("Preguntas").innerHTML = preguntas[indiceAleatorio]
@@ -142,13 +148,15 @@ const Juego = () => {
                 <center>
                     <button className="button" id="iniciar" onClick={iniciar}>Iniciar</button>
                     <div></div>
-                    <div className="temporizador" id="Temporizador1"></div>
+                    <div><p className="temporizador" id="Temporizador1" Style="display:none"></p></div>
                 </center>
-                <div id="Preguntas"></div>
-                <div id="Respuestas"></div>
+                <div className="preguntas" id="Preguntas"></div>
+                <div className="cards">
+                    <div className="respuestas" id="Respuestas"></div>
+                </div>
                 <div id="btnRespuesta"></div>
                 <center>
-                    <button className="button" id="Responder" onClick={comprobar}>Responder</button>
+                    <button className="button" id="Responder" onClick={comprobar} Style="display:none">Responder</button>
                 </center>
             </div>
         </div>
