@@ -115,16 +115,16 @@ const Juego = () => {
             }
             if (selectedValue === indice_respuesta_correcta){
                 document.getElementById("Temporizador1").innerHTML = ""
-                alert("Correcto... cargando siguiente pregunta");
+                alert("Correcto...");
                 const secondState = {
                     name: User.name,
                     level: User.level,
                     category: User.category,
                     money: User.money + 1000,
-                    apiURL: User.apiURL
+                    apiURL: User.apiURL,
+                    preguntaNro: User.preguntaNro + 1
                   };
 
-                login(secondState);
                 clearTimeout(temporizador1);
                 console.log("esperando 5 seg");
                 document.getElementById("Temporizador1").innerHTML = 5 //2
@@ -133,7 +133,12 @@ const Juego = () => {
                     document.getElementById("Temporizador1").innerHTML = n //2
                     if(n===0){
                         clearTimeout(temporizador2);
-                        iniciar();
+                        if(User?.preguntaNro === 2){
+                            alert("Felicidades Ganaste");
+                        }else{
+                            iniciar();
+                            login(secondState);
+                        }
                     }
                     n--
                 }, 1000);
@@ -150,7 +155,7 @@ const Juego = () => {
                 <center>
                     <button className="button" id="iniciar" onClick={iniciar}>Iniciar</button>
                     <div></div>
-                    <div><p className="temporizador" id="Temporizador1" Style="display:none"></p></div>
+                    <div><p className="temporizador" id="Temporizador1" style={{display:'none'}}></p></div>
                 </center>
                 <div className="preguntas" id="Preguntas"></div>
                 <div className="cards">
@@ -158,7 +163,7 @@ const Juego = () => {
                 </div>
                 <div id="btnRespuesta"></div>
                 <center>
-                    <button className="button" id="Responder" onClick={comprobar} Style="display:none">Responder</button>
+                    <button className="button" id="Responder" onClick={comprobar} style={{display:'none'}}>Responder</button>
                 </center>
             </div>
         </div>

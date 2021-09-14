@@ -28,7 +28,8 @@ const Inicio = () => {
             level: varLevel,
             category: VarCategory,
             money: 0,
-            apiURL: `https://opentdb.com/api.php?amount=10&category=${VarCategory}&difficulty=${varLevel}&type=multiple`
+            apiURL: `https://opentdb.com/api.php?amount=10&category=${VarCategory}&difficulty=${varLevel}&type=multiple`,
+            preguntaNro: 1
           };
         login(secondState);
       };
@@ -64,7 +65,6 @@ const Inicio = () => {
                         style={{color: 'white', textDecoration: 'none'}} 
                         activeStyle={{color: 'white', textDecoration: 'none'}} exact to={camposVacios ? "/": "/juego" } 
                         onClick={getValueInput}>Ingresar</NavLink> }</button>
-            
             </form>
             </center>
             <div id="Temporizador1" hidden></div>
