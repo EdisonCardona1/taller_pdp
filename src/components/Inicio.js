@@ -35,7 +35,7 @@ const Inicio = () => {
 
     return (
         <div>
-        <h1><center>Juego Open Trivia</center></h1>
+        <h1><center><p>Juego Open Trivia</p></center></h1>
        <center>
             <form className="formulario">
                 <div>
@@ -60,7 +60,10 @@ const Inicio = () => {
                         <option value="hard">Hard</option>
                     </select>
                 </div>
-                <button onClick={validarCamposVacios}>{<NavLink exact to={camposVacios ? "/": "/juego" } onClick={getValueInput}>Ingresar</NavLink> }</button>
+                <button className="button" onClick={validarCamposVacios}>{<NavLink 
+                        style={{color: 'white', textDecoration: 'none'}} 
+                        activeStyle={{color: 'white', textDecoration: 'none'}} exact to={camposVacios ? "/": "/juego" } 
+                        onClick={getValueInput}>Ingresar</NavLink> }</button>
             
             </form>
             </center>

@@ -41,7 +41,9 @@ const Juego = () => {
         updateQuestions();
      }, [updateQuestions]);
 
-    function iniciar () {
+    const iniciar = () => {
+        document.getElementById("iniciar").style.visibility = "hidden";
+
         let n = 29;
         temporizador1 = setInterval(() => {
             document.getElementById("Temporizador1").innerHTML = n
@@ -93,7 +95,6 @@ const Juego = () => {
         document.getElementById("Preguntas").innerHTML = preguntas[indiceAleatorio]
         document.getElementById("Respuestas").innerHTML = txt_respuestas
         document.getElementById("Temporizador1").innerHTML = 30
-        document.getElementById("Temporizador2").innerHTML = 5
     };
 
     function comprobar(){
@@ -106,6 +107,7 @@ const Juego = () => {
                 }
             }
             if (selectedValue === indice_respuesta_correcta){
+                document.getElementById("Temporizador1").innerHTML = ""
                 alert("Correcto... cargando siguiente pregunta");
                 const secondState = {
                     name: User.name,
@@ -118,9 +120,10 @@ const Juego = () => {
                 login(secondState);
                 clearTimeout(temporizador1);
                 console.log("esperando 5 seg");
+                document.getElementById("Temporizador1").innerHTML = 5 //2
                 let n = 4;
                 let temporizador2 = setInterval(() => {
-                    document.getElementById("Temporizador2").innerHTML = n
+                    document.getElementById("Temporizador1").innerHTML = n //2
                     if(n===0){
                         clearTimeout(temporizador2);
                         iniciar();
@@ -133,16 +136,21 @@ const Juego = () => {
             }
     }
 
-
     return (
-        <div>
-            <button onClick={iniciar}>Iniciar</button>
-            <div id="Temporizador1"></div>
-            <div id="Temporizador2"></div>
-            <h2>Preguntas:</h2>
-            <div id="Preguntas"></div>
-            <div id="Respuestas"></div>
-            <button onClick={comprobar}>Comprobar respuesta</button>                        
+        <div className="container">
+            <div className="center">
+                <center>
+                    <button className="button" id="iniciar" onClick={iniciar}>Iniciar</button>
+                    <div></div>
+                    <div className="temporizador" id="Temporizador1"></div>
+                </center>
+                <div id="Preguntas"></div>
+                <div id="Respuestas"></div>
+                <div id="btnRespuesta"></div>
+                <center>
+                    <button className="button" id="Responder" onClick={comprobar}>Responder</button>
+                </center>
+            </div>
         </div>
     );
 }

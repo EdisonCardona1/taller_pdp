@@ -7,7 +7,6 @@
 }
 
 body {
-	background: #E8E8E8;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -21,7 +20,7 @@ body {
 .formulario {
 	min-width: 600px;
 	margin-top: 10px;
-	background: #fff;
+	background: rgb(240, 240, 240);
 	border-radius: 5px;
 	padding: 20px;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -187,3 +186,7 @@ body {
     background-size: .65em auto, 100%;
    
   }
+
+p{
+  color: white;
+}
