@@ -138,7 +138,7 @@ const Juego = () => {
                     document.getElementById("Temporizador1").innerHTML = n //2
                     if(n===0){
                         clearTimeout(temporizador2);
-                        if(User?.preguntaNro === 2){
+                        if(User?.preguntaNro === 10){
                             alert("Felicidades Ganaste");
                             document.getElementById("Responder").style.display = "none";
                         }else{
